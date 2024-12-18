@@ -10,8 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         $dataDiri = [
-            'nama' => 'Uhuyy',
-            'kelas' => 'IF 3C',
+            'nama' => 'Waldo',
+            'kelas' => '',
             'mata_kuliah' => ['Pemrograman Web', 'Jaringan Komputer', 'Basis Data'],
         ];
         return view('home', compact('dataDiri'));

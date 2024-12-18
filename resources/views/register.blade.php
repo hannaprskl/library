@@ -20,7 +20,7 @@
                             {{ Session::get('success') }}
                         </div>
                     @endif
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('registerPost') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
@@ -35,10 +35,26 @@
                             <input type="password" name="password" class="form-control" id="password" required>
                         </div>
                         <div class="mb-3">
+                            <label for="password_confirmation" class="form-label">Confirm Password</label>
+                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" required>
+                        </div>
+
+                        <div class="mb-3">
                             <div class="d-grid">
-                                <button class="btn btn-primary">Register</button>
+                                <button class="btn btn-primary" type="submit">Register</button>
                             </div>
                         </div>
+                        @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                         @endif
+
+                        
                     </form>
                     <div class="mt-3">
                         <p>Already have an account? <a href="{{ route('login') }}">Login here</a></p>
