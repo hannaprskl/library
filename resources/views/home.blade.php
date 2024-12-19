@@ -73,7 +73,7 @@
             </div>
             <div class="card-body">
                 <div class="profile-header">
-                    <img src="{{ asset('storage/logo/icon_logo.png') }}" alt="logo" class="profile-img">
+                    <img src="{{ asset('build/assets/img/profil.png') }}" alt="logo" class="profile-img">
                     <div>
                         <h4 class="mb-4">Selamat datang, <strong>{{ $dataDiri['nama'] }}</strong>!</h4>
                     </div>
@@ -92,10 +92,7 @@
                 <div class="row mb-4">
                     <div class="col-md-3"><strong>Mata Kuliah:</strong></div>
                     <div class="col-md-9">
-                        <ul class="list-group">
-                            @foreach($dataDiri['mata_kuliah'] as $mataKuliah)
-                                <li class="list-group-item">{{ $mataKuliah }}</li>
-                            @endforeach
+                        <p>{{ $dataDiri['mata_kuliah'] }}</p>
                         </ul>
                     </div>
                 </div>
